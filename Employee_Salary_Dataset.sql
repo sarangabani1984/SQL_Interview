@@ -1,4 +1,7 @@
 -- Create the Employee table
+-- create DATABASE sql_masterclass;
+USE sql_masterclass;
+
 CREATE TABLE Employee (
     id INT PRIMARY KEY,
     name VARCHAR(50),
@@ -15,5 +18,10 @@ INSERT INTO Employee (id, name, salary) VALUES
 (6, 'Frank', 72000.00),
 (7, 'Grace', 55000.00);
 
--- Query to verify data
-SELECT * FROM Employee;
+-- Query to find the second highest salary using ROW_NUMBER()
+Select * from (
+SELECT *, ROW_NUMBER() OVER (ORDER BY salary DESC)rnum FROM Employee ) AS ranked_employees
+WHERE rnum = 2;
+
+-- Query to find the second highest salary using MAX and subquery
+select max(salary) from Employee where salary < (select max(salary) from Employee);
