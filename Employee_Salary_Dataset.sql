@@ -25,3 +25,5 @@ WHERE rnum = 2;
 
 -- Query to find the second highest salary using MAX and subquery
 select max(salary) from Employee where salary < (select max(salary) from Employee);
+
+SELECT * from Employee;
