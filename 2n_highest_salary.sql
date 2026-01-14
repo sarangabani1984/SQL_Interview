@@ -9,3 +9,10 @@ FROM (
 ) AS temp
 ORDER BY salary ASC;
 
+select 
+category, 
+MAX(price) OVER(PARTITION BY category) ,
+MIN(price) OVER(PARTITION BY category) ,
+AVG(price) OVER(PARTITION BY category) ,
+SUM(price) OVER(PARTITION BY category)
+from products;

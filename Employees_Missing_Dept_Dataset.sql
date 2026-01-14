@@ -41,8 +41,6 @@ WHERE l.DeptID IS NULL;
 
 
 
-
-
 -- Solution 1: Using LEFT JOIN
 SELECT E.EmpName, E.DeptID
 FROM dbo.Employees_With_Dept E
