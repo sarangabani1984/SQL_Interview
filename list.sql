@@ -24,3 +24,8 @@ FROM (
     FROM Employee
 ) AS ranked
 WHERE salary_rank = 1;
+
+SELECT * from Employee;
+
+select department, max(salary) as max_salary
+from Employee GROUP BY department;
