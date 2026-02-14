@@ -26,3 +26,7 @@ select * from (
     from Employee
 ) as ranked_employees
 where salary_rank = 2;
+
+select max(salary) as second_highest_salary
+from Employee 
+where salary < (select max(salary) from Employee);
