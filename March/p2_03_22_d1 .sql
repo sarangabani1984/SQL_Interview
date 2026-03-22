@@ -7,4 +7,3 @@ WITH ranked AS (
 SELECT *
 FROM ranked
 WHERE rn = 2
-
