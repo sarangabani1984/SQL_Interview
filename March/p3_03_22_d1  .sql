@@ -1,11 +1,4 @@
-SELECT 
-    d.DepartmentID,
-    d.DepartmentName,
-    MAX(e.Salary) AS HighestSalary
-FROM Employees e
-JOIN Departments d ON e.DepartmentID = d.DepartmentID
-GROUP BY d.DepartmentID, d.DepartmentName
-ORDER BY d.DepartmentID;
-
-
-
+with CTE AS (
+    SELECT *, ROW_NUMBER() OVER (ORDER BY Salary DESC) AS rn FROM Employees
+)
+SELECT * FROM CTE WHERE rn % 2 = 0

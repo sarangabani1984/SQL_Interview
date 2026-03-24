@@ -125,7 +125,7 @@ ORDER BY DeptID, Salary DESC;
 -- =====================================================
 
 -- Create Employees table for Nth Row examples
-CREATE TABLE Employees (
+CREATE TABLE Employees_nth (
     EmployeeID INT PRIMARY KEY IDENTITY(101,1),
     EmployeeName VARCHAR(50),
     Department VARCHAR(50),
@@ -134,7 +134,7 @@ CREATE TABLE Employees (
 );
 
 -- Insert sample data
-INSERT INTO Employees (EmployeeName, Department, JoinDate, Salary) VALUES
+INSERT INTO Employees_nth (EmployeeName, Department, JoinDate, Salary) VALUES
 ('Alice Johnson', 'IT', '2020-01-15', 75000),
 ('Bob Smith', 'HR', '2019-05-20', 60000),
 ('Charlie Brown', 'IT', '2021-03-10', 80000),
@@ -155,6 +155,9 @@ SELECT * FROM Employees ORDER BY EmployeeID;
 
 -- Get the 5th row (Nth = 5)
 -- OFFSET 4 ROWS = skip first 4 rows, FETCH NEXT 1 ROW = get next 1 row
+SELECT * FROM Employees_nth offset 4 rows fetch next 1 rows only;
+
+
 SELECT * FROM Employees
 ORDER BY EmployeeID
 OFFSET 4 ROWS

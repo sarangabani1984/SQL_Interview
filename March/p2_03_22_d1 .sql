@@ -8,4 +8,3 @@ GROUP BY d.DepartmentID, d.DepartmentName
 ORDER BY d.DepartmentID;
 
 
-

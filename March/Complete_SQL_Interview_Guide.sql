@@ -7,6 +7,7 @@
 -- ============================================================================
 
 -- Create Employees Table
+DROP TABLE IF EXISTS Employees;
 CREATE TABLE Employees (
     EmployeeID INT PRIMARY KEY,
     EmployeeName VARCHAR(100),
@@ -17,6 +18,7 @@ CREATE TABLE Employees (
 );
 
 -- Create Departments Table
+DROP TABLE IF EXISTS Departments;
 CREATE TABLE Departments (
     DepartmentID INT PRIMARY KEY,
     DepartmentName VARCHAR(100),
